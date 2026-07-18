@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "name": "PastureScan",
+    "slug": "pasturescan",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.yourcompany.pasturescan"
+    },
+    "android": {
+      "package": "com.yourcompany.pasturescan",
+      "usesCleartextTraffic": true
+    },
+    "web": {
+      "build": {
+        "output": "static"
+      },
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": ["expo-router"],
+    "extra": {
+      "apiBaseUrl": "https://image-2-biomass.vercel.app/api/v1",
+      "router": {
+        "origin": false
+      }
+    },
+    "scheme": "pasturescan"
+  }
+}
