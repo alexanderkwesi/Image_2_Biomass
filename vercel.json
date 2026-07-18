@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "front-end/package.json",
+      "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
         "distDir": "front-end/build"
@@ -19,12 +19,8 @@
       "dest": "backend-services/api_gateway/app/main.py"
     },
     {
-      "src": "/static/(.*)",
-      "dest": "front-end/build/static/$1"
-    },
-    {
       "src": "/(.*)",
-      "dest": "front-end/build/index.html"
+      "dest": "front-end/build/$1"
     }
   ]
 }
