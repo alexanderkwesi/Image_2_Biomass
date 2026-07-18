@@ -3,24 +3,28 @@
   "builds": [
     {
       "src": "backend-services/api_gateway/app/main.py",
-      "use": "@vercel/python"
+      "use": "@vercel/python",
+      "config": {
+        "handler": "main.py",
+        "runtime": "python3.9"
+      }
     },
     {
-      "src": "front-end/package.json",
+      "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "front-end/build"
+        "distDir": "build"
       }
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/backend-services/api_gateway/app/main.py"
+      "dest": "backend-services/api_gateway/app/main.py"
     },
     {
       "src": "/(.*)",
-      "dest": "/front-end/build/$1"
+      "dest": "build/$1"
     }
   ]
 }
